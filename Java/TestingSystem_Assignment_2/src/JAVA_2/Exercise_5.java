@@ -317,11 +317,11 @@ public class Exercise_5 {
 			groupAcc.groups = groupOfAccount;
 			break;
 		case "Tam chuyen":
-			groupOfAccount = insert(groupOfAccount, group1);
+			groupOfAccount = insert(groupOfAccount, group2);
 			groupAcc.groups = groupOfAccount;
 			break;
 		case "Dev System":
-			groupOfAccount = insert(groupOfAccount, group1);
+			groupOfAccount = insert(groupOfAccount, group3);
 			groupAcc.groups = groupOfAccount;
 			break;
 		default:
