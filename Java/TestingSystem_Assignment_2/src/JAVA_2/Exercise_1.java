@@ -110,12 +110,6 @@ public class Exercise_1 {
 		System.out.println(acc1.positions.positionName == PositionName.DEV ? "Đây là Developer" : "Người này không phải là Developer");
 
 		
-		//Question 5
-		
-		
-		
-		
-		
 		//Question 6
 		int slGroup = groupAcc2.groups.length;
 		switch (slGroup) {
