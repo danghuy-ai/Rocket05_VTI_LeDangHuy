@@ -133,9 +133,9 @@ public class Exercise_4 {
 		String name = scanner.nextLine();
 		
 		String[] arrNames = name.split(" ");
-		String ho  = null;
-		String dem  = null;
-		String ten  = null;
+		String ho  = "";
+		String dem  = "";
+		String ten  = "";
 		int lengthName = arrNames.length;
 		String space = " ";
 		String spaceTen;
