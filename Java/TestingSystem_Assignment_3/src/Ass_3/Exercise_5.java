@@ -17,19 +17,18 @@ public class Exercise_5 {
 		departments[3] = dep4;
 		departments[4] = dep5;
 		
-//		Question1(dep1);
-//		
-//		Question2(departments);
-//		
-//		Question3(dep1);
-//		
-//		Question4(dep1);
-//		Question4(dep5);
-//		
-//		Question5(dep1,dep2);
-//		
-//		Question6();
-		System.out.println("a".compareToIgnoreCase("d"));
+		Question1(dep1);
+		
+		Question2(departments);
+		
+		Question3(dep1);
+		
+		Question4(dep1);
+		Question4(dep5);
+		
+		Question5(dep1,dep2);
+		
+		Question6();
 		
 		Question7();
 	}
