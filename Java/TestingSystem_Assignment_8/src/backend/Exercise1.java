@@ -1,20 +1,22 @@
 package backend;
 
-import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Exercise1 {
 	public void Queston2() {
-		Stack<String> name = new Stack<>();
+		Queue<String> name = new LinkedList<>();
 		
-		name.push("Nguyễn Văn A");
-		name.push("Trần Văn Nam");
-		name.push("Nguyễn Văn Huyên");
-		name.push("Nguyễn Văn Nam");
+		name.add("Nguyễn Văn Nam");
+		name.add("Nguyễn Văn Huyên");
+		name.add("Trần Văn Nam");
+		name.add("Nguyễn Văn A");
+		
 		
 		System.out.println("Thứ tự tới của các học sinh theo thứ tự sớm nhất tới muộn nhất: ");
 		int sum = name.size();
 		for(int i=0; i < sum; i++) {
-			System.out.println((i+1) + ". " + name.pop());
+			System.out.println((i+1) + ". " + name.poll());
 		}
 	}
 }
