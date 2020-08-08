@@ -15,8 +15,7 @@ public class SortByBirth implements Comparator<Student> {
 			value = 1;
 		}
 		else {
-			Comparator<Student> sortByMark = new SortByMark();
-			value = sortByMark.compare(o1, o2);
+			value = 0;
 		}
 			
 		

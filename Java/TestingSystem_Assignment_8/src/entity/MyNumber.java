@@ -1,7 +1,5 @@
 package entity;
 
-import java.util.Comparator;
-
 public class MyNumber<N extends Number> {
 
 	private N number;

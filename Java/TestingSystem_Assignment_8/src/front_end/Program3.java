@@ -51,8 +51,13 @@ public class Program3 {
 		
 		
 		//Question6
-		MyMap<Integer, String> student = new MyMap<Integer, String>(11172659, "Lê Đăng Huy");
-		System.out.println("\n" + student.getKey() + " - " + student.getValue());
+		MyMap<Integer, String> students = new MyMap<Integer, String>();
+		
+		students.put(1, "Huy");
+		students.put(3, "Minh");
+		students.put(6, "Luc");
+		
+		System.out.println(students.getValue(3));
 		
 	}
 }

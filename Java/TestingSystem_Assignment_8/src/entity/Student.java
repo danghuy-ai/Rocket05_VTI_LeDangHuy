@@ -64,19 +64,15 @@ public class Student implements Comparable<Student> {
 		 // So sánh 2 String.
         int value = this.name.compareTo(o.name);
  
-        // Nếu name của 2 đối tượng là không bằng nhau.
-        if (value != 0) {
-            return value;
-        }
-        
-		// Nếu name của 2 đối tượng là giống nhau
-        // Thì so sánh theo ngày sinh
-        Comparator sortByBirth = new SortByBirth();
-//        List<Student> sortStudent = new ArrayList<>();
-//        sortStudent.add(this);
-//        sortStudent.add(o);
-//        Collections.sort(sortStudent, sortByBirth);
-        value = sortByBirth.compare(this, o);
+//        // Nếu name của 2 đối tượng là không bằng nhau.
+//        if (value != 0) {
+//            return value;
+//        }
+//        
+//		// Nếu name của 2 đối tượng là giống nhau
+//        // Thì so sánh theo ngày sinh
+//        Comparator sortByBirth = new SortByBirth();
+//        value = sortByBirth.compare(this, o);
         
 		return value;
 	}

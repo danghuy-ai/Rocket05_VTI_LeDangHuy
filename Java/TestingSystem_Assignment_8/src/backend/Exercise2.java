@@ -2,8 +2,12 @@ package backend;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
+import entity.SortByBirth;
+import entity.SortByMark;
+import entity.SortByName;
 import entity.Student;
 import utils.Utils;
 
@@ -38,7 +42,14 @@ public class Exercise2 {
 		students.add(new Student(10, "Huy", Utils.convertStringToLocalDate("07-05-1999") ,9.5f));
 		students.add(new Student(11, "Huy", Utils.convertStringToLocalDate("07-05-1999") ,8.5f));
 		
+		
+		Comparator<Student> sortByName = new SortByName();
+		Comparator<Student> sortByBirth = new SortByBirth();
+		Comparator<Student> sortByMark = new SortByMark();
+		
 		Collections.sort(students);
+		Collections.sort(students, sortByName.thenComparing(sortByBirth.thenComparing(sortByMark)));
+		
 		for (Student student : students) {
 			System.out.println(student.toString());
 		}
