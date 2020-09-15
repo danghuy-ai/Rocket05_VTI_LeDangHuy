@@ -12,6 +12,17 @@ import com.vti.presentationlayer.AccountController;
 public class ProgramAccount {
 
 	public static void main(String[] args) throws ParseException {
+		
+		/*
+		 * Database có tạo PROCEDURE để delete Account
+		 * 
+		 * >> File source database trong thư mục:  src\main\resources
+		 * 
+		 * 					MUST RUN
+		 * 
+		 */
+		
+		
 		AccountController controller = new AccountController();
 
 		System.out.println("\n\n***********CREATE ACCOUNT***********");
@@ -34,8 +45,8 @@ public class ProgramAccount {
 		
 		
 		System.out.println("\n\n***********GET ALL ACCOUNTS***********");
-		int pageNumber = 1;
-		int pageSize = 2;
+		int pageNumber = 0;
+		int pageSize = 200;
 		String usernameSearch = "danghuy1";
 		PositionName filter = PositionName.DEV;
 		controller.getAllAccounts(pageNumber, pageSize, usernameSearch, filter);

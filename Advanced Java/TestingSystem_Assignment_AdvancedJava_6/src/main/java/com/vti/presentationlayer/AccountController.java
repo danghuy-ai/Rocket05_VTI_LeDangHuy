@@ -24,7 +24,7 @@ public class AccountController {
 		service = new AccountService();
 	}
 	@Valid
-	public void getAllAccounts(
+	public void getAllAccounts(@Valid
 			@Min(value = 1, message = "{para.pageNumber.Min}") int pageNumber, 
 			@Min(value = 5, message = "{para.pageSize.Min}") @Max(value = 20, message = "{para.pageSize.Max}") int pageSize, 
 			@Length(max = 50, message = "{para.nameSearch.Length}") String usernameSearch, 
