@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import com.vti.config.internationalization.MessageProperty;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
-//@ControllerAdvice
+@ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@SuppressWarnings("unused")

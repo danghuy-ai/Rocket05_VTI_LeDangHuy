@@ -2,8 +2,6 @@ package com.vti.controller;
 
 import java.util.List;
 
-import javax.validation.constraints.Size;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
