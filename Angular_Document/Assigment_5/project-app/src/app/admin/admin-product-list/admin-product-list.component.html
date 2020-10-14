@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<h1> Product list </h1>
+<p>admin-product-list works!</p>
+
+<!-- <button (click)="addProductDemo()">Add demo</button> -->
+
+<button class="btn btn-lg btn-outline-primary" (click)="loadChildComponent(null)" style="margin-left: 30%;">
+    Add new product
+</button>
+<hr>
+<app-admin-product-create *ngIf="showModal" [product]="productModal" (isClose)="closeModal($event)" (newProduct)="listChange($event)"></app-admin-product-create>
+
+
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+
+            <!---Alert-->
+            <div class="col alert {{alertType}}" role="alert" *ngIf="successMessage" type="success" (close)="successMessage = ''">{{ successMessage }}</div>
+
+            <div class="table100 ver1 m-b-110">
+                <div class="table100-head">
+                    <table>
+                        <thead>
+                            <tr class="row100 head">
+                                <th class="cell100 column1">STT</th>
+                                <th class="cell100 column2">Product Name</th>
+                                <th class="cell100 column3">Price</th>
+                                <th class="cell100 column4">Quantity</th>
+                                <th class="cell100 column5">Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="table100-body js-pscroll">
+                    <table>
+                        <tbody>
+                            <tr class="row100 body" *ngFor="let item of products; let i = index">
+                                <td class="cell100 column1" style="text-align: center;">{{ i+1 }}</td>
+                                <td class="cell101 column2"><a href="" [routerLink]="['../detail/' + item.id]">{{ item.name }}</a></td>
+                                <td class="cell101 column3">{{ item.price }}</td>
+                                <td class="cell101 column4">{{ item.quantity }}</td>
+                                <td class="cell100 column5" style="text-align: center;">
+                                    <span><button class="btn-btn" (click)="loadChildComponent(item)">
+                                        <img src="assets/images/edit.png" style="width: 32px;">
+                                    </button></span>
+                                    <span><button class="btn-btn" (click)="delete(i)"><img src="assets/images/delete.png" style="width: 32px;"></button></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
