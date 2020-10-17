@@ -1,0 +1,79 @@
+<h1> Product list </h1>
+<p>admin-product-list works!</p>
+
+<!-- <button (click)="addProductDemo()">Add demo</button> -->
+
+<button class="btn btn-lg btn-outline-primary" (click)="loadChildComponent(null)" style="margin-left: 30%;">
+    Add new product
+</button>
+<hr>
+<app-admin-product-create *ngIf="showModal" [product]="productModal" (isClose)="closeModal($event)"></app-admin-product-create>
+
+<form>
+    <div class="form-group form-inline">
+        Full text search: <input class="form-control ml-2" type="text" [formControl]="filter"/>
+    </div>
+</form>
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+
+            <!--Alert-->
+            <div class="col alert {{alertType}} alert-content" role="alert" *ngIf="successMessage" type="success" (close)="successMessage = ''">{{ successMessage }}</div>
+
+            <div class="table100 ver1 m-b-110">
+                <div class="table100-head">
+                    <table>
+                        <thead>
+                            <tr class="row100 head">
+                                <th class="cell100 column1">STT</th>
+                                <th class="cell100 column2">Product Name</th>
+                                <th class="cell100 column3">Price</th>
+                                <th class="cell100 column4">Quantity</th>
+                                <th class="cell100 column5">Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="table100-body js-pscroll">
+                    <table>
+                        <tbody *ngIf="productShow != null">
+                            <tr class="row100 body" *ngFor="let item of productShow; let i = index">
+                                <td class="cell100 column1" style="text-align: center;">{{ i+1 }}</td>
+                                <td class="cell101 column2"><a href="" [routerLink]="['../../detail/' + item.id]">
+                                    <ngb-highlight [result]="item.name" [term]="filter.value"></ngb-highlight>
+                                </a></td>
+                                <td class="cell101 column3">
+                                    <ngb-highlight [result]="item.price" [term]="filter.value"></ngb-highlight>
+                                </td>
+                                <td class="cell101 column4">
+                                    <ngb-highlight [result]="item.quantity" [term]="filter.value"></ngb-highlight>
+                                </td>
+                                <td class="cell100 column5" style="text-align: center;">
+                                    <span><button class="btn-btn" (click)="loadChildComponent(item)">
+                                        <img src="assets/images/edit.png" style="width: 32px;">
+                                    </button></span>
+                                    <span><button class="btn-btn" (click)="delete(i)"><img src="assets/images/delete.png" style="width: 32px;"></button></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pagination">
+    <div class="mx-auto pagination-content">
+        <button class="btn-page1 btn-page" [disabled]="page==1" (click)="firstPage()"><<</button>
+        <button class="btn-page2 btn-page" [disabled]="page==1" (click)="previousPage()"><</button>
+        <div style="display: inline; font-size: 22px;">
+            Page {{page}}/{{pageNum}}
+        </div>
+        <button class="btn-page2 btn-page" [disabled]="page==pageNum" (click)="nextPage()">></button>
+        <button class="btn-page1 btn-page" [disabled]="page==pageNum" (click)="lastPage()">>></button>
+    </div>
+</div>
